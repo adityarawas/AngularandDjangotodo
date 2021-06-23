@@ -1,0 +1,37 @@
+<div *ngIf="!enableEdit" class="card h-100">
+    <div class="card-body">
+        <small class="float-end">{{since}}</small>
+          <h6 class="fw-light">{{title}}</h6>
+        <p>{{description}}</p>
+        <div>
+        <span class="badge rounded-pill {{status_class}} float-start">{{status_name}}</span>
+            <!-- <i class="fa fa-bell text-primary mx-2 fa-lg  pointer"></i> -->
+        </div>
+    </div>
+    <div class="card-footer d-flex justify-content-around">
+        <i *ngIf="status !== '2'" (click)="delete(pk)" class="fa fa-trash text-danger mx-2 fa-lg  pointer"></i>
+        <i *ngIf="status === '2'" (click)="addtopending(pk)" class="fa fa-times text-info mx-2 fa-lg  pointer"></i>
+        <i *ngIf="status !== '2'" class="fa fa-check  text-info mx-2 fa-lg  pointer" (click)="addtocomplete(pk)"></i>
+        <i class="fa fa-edit  text-success mx-2 fa-lg  pointer" (click)="editmode(true)" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+    </div>
+</div>
+
+<div *ngIf="enableEdit" class="card h-100">
+    <div class="card-body">
+          <input class="fw-light form-control form-control-sm mb-1" value="{{title}}"  #updatetitle/>
+          <small class="text-danger">{{todoerr}}</small>
+
+
+        <textarea style="height: 100px;" class="form-control form-control-sm " #updatedescription>{{description}}</textarea>
+        <small class="text-danger">{{descriptionerr}}</small>
+
+        <div>
+            <!-- <i class="fa fa-bell text-primary mx-2 fa-lg  pointer"></i> -->
+        </div>
+    </div>
+    <div class="card-footer d-flex justify-content-around">
+        <i class="fa fa-times  text-danger mx-2 fa-lg  pointer" (click)="editmode(false)"  data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+
+        <i class="fa fa-save  text-success mx-2 fa-lg  pointer" (click)="updateTask({title:updatetitle.value, description:updatedescription.value, pk:pk})" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+    </div>
+</div>

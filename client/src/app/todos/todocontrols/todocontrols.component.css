@@ -1,0 +1,8 @@
+.container{
+    max-width: 800px;
+}
+.add-todo-box.card{
+    padding: 25px;
+    margin-top: -100px;
+    box-shadow: 0 4px 12px #00000026 !important;
+}
