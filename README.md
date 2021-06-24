@@ -3,7 +3,7 @@ Default branch is main of todolist release [`main` branch](https://github.com/ad
 
 ## Quick start
 -- [Download the latest release](https://github.com/adityarawas/AngularandDjangotodo/archive/refs/heads/main.zip)
--- Clone the repo: `git clone https://github.com/adityarawas/AngularandDjangotodo.git
+-- Clone the repo: `git clone https://github.com/adityarawas/AngularandDjangotodo.git`
 
 ## Starting project
 ### Installing Angular and starting client
